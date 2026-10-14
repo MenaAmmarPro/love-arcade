@@ -3,7 +3,7 @@
 Ten tiny, gentle games with collectable badges and a saved best-score board.
 Part of the **Love for Mena** collection.
 
-**Live:** https://ammar49-cyber.github.io/love-arcade/
+**Live:** https://menaammarpro.github.io/love-arcade/
 
 ## Games
 
@@ -40,4 +40,4 @@ Static site, deployed with GitHub Pages from `main`.
 ## License
 
 Creative Commons BY-NC-ND 4.0 — see [`LICENSE`](LICENSE).
-© 2026 Ammar (ammar49-cyber). Made with care for Mena.
+© 2026 Ammar (MenaAmmarPro). Made with care for Mena.
