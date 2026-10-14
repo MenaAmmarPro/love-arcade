@@ -1,0 +1,57 @@
+/* love-arcade — page-specific styles (built on css/theme.css) */
+
+.arcade-hero {
+  min-height: 540px;
+}
+
+.arcade-hero .moon {
+  font-size: clamp(3rem, 10vw, 5rem);
+}
+
+/* ---- high-score board ---- */
+.best-list {
+  list-style: none;
+  padding: 0;
+  margin: 30px auto 8px;
+  max-width: 560px;
+  display: grid;
+  gap: 10px;
+}
+
+.best-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 18px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--panel);
+}
+
+.best-name {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.best-value {
+  font-variant-numeric: tabular-nums;
+  font-weight: 800;
+  color: var(--pink);
+}
+
+.best-row.is-empty .best-value {
+  color: var(--muted);
+  font-weight: 500;
+}
+
+/* the arcade header nav is a little wider than a normal page */
+.nav-links {
+  gap: 18px;
+}
+
+@media (max-width: 900px) {
+  .nav-links {
+    gap: 14px;
+  }
+}

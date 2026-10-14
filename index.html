@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090b20">
+  <meta name="description" content="A little arcade of tiny games and collectable badges, made for Mena.">
+  <title>Love Arcade ✦ for Mena</title>
+  <link rel="canonical" href="https://ammar49-cyber.github.io/love-arcade/">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Love Arcade">
+  <meta property="og:title" content="Love Arcade ✦ for Mena">
+  <meta property="og:description" content="Ten tiny games and collectable badges, made for Mena.">
+  <meta property="og:url" content="https://ammar49-cyber.github.io/love-arcade/">
+  <meta property="og:image" content="https://ammar49-cyber.github.io/love-arcade/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Love Arcade - tiny games for Mena">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Love Arcade ✦ for Mena">
+  <meta name="twitter:description" content="Ten tiny games and collectable badges, made for Mena.">
+  <meta name="twitter:image" content="https://ammar49-cyber.github.io/love-arcade/assets/og-image.png">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/app.css">
+  <script src="js/theme-main.js" defer></script>
+  <script src="js/effects.js" defer></script>
+  <script src="js/games.js" defer></script>
+  <script src="js/arcade.js" defer></script>
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Love Arcade">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/icon-192.png">
+</head>
+<body>
+  <canvas id="starfield" aria-hidden="true"></canvas>
+
+  <header class="site-header">
+    <a class="brand" href="index.html">✦ Love Arcade</a>
+    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">Menu</button>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a class="active" href="index.html">Games</a>
+      <a href="#badges">Badges</a>
+      <a href="#bests">Best scores</a>
+      <a href="https://ammar49-cyber.github.io/loveformymena/">Our little universe ↗</a>
+      <button class="theme-toggle" type="button" aria-label="Toggle color theme">Theme</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero arcade-hero">
+      <p class="eyebrow">A TINY ARCADE, JUST FOR YOU</p>
+      <div class="moon" aria-hidden="true">🎮</div>
+      <p class="small-caption">Ten little games and a shelf of badges.</p>
+      <h1>Play with me, <span>Mena.</span></h1>
+      <p class="hero-description">
+        Nothing here is serious — just a handful of silly, gentle games made so
+        you have somewhere warm to lose five minutes.
+      </p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="#games">Start playing <span>♥</span></a>
+        <a class="button button-ghost" href="#badges">See your badges</a>
+      </div>
+      <p class="signature">Made with love, just for you <span>♥</span></p>
+    </section>
+
+    <section class="section" id="games">
+      <p class="eyebrow">PICK A GAME</p>
+      <h2>Ten tiny games <span>to pass the time.</span></h2>
+
+      <div class="games-grid">
+        <article class="game-card">
+          <h3>Bubble pop</h3>
+          <p class="game-hint">Tap the bubbles before they float away.</p>
+          <div class="game-field" id="game-bubbles"></div>
+          <p class="game-score">Popped: <span id="bubble-score">0</span></p>
+        </article>
+
+        <article class="game-card">
+          <h3>Catch falling hearts</h3>
+          <p class="game-hint">Tap the hearts as they drift down.</p>
+          <div class="game-field" id="game-hearts"></div>
+          <p class="game-score">Caught: <span id="heart-score">0</span></p>
+        </article>
+
+        <article class="game-card">
+          <h3>Memory match</h3>
+          <p class="game-hint">Flip the tiles and find all four pairs.</p>
+          <div class="memory-game-grid" id="game-memory"></div>
+          <p class="game-score">Pairs: <span id="memory-score">0</span> / 4 &middot; Moves: <span id="memory-moves">0</span></p>
+          <p class="game-score" id="memory-win" aria-live="polite"></p>
+        </article>
+
+        <article class="game-card">
+          <h3>Pet the kitty</h3>
+          <p class="game-hint">Tap the kitty for some love.</p>
+          <div class="game-field" id="game-kitty">
+            <div class="kitty" id="kitty" role="button" tabindex="0" aria-label="Pet the kitty">&#128049;</div>
+          </div>
+          <p class="game-score">Purrs: <span id="kitty-score">0</span></p>
+        </article>
+
+        <article class="game-card">
+          <h3>Whack a heart</h3>
+          <p class="game-hint">Tap the heart when it pops up.</p>
+          <div class="whack-grid" id="game-whack"></div>
+          <p class="game-score">Whacked: <span id="whack-score">0</span></p>
+        </article>
+
+        <article class="game-card">
+          <h3>Flappy heart</h3>
+          <p class="game-hint">Tap (or press Space) to keep the heart flying through the gaps.</p>
+          <div class="flappy-field" id="game-flappy"></div>
+          <p class="game-score">Score: <span id="flappy-score">0</span></p>
+          <p class="game-score" id="flappy-status" aria-live="polite"></p>
+        </article>
+
+        <article class="game-card">
+          <h3>2048 hearts</h3>
+          <p class="game-hint">Use the arrow keys (tap the board first) to merge tiles to 2048.</p>
+          <div class="board-2048" id="game-2048"></div>
+          <div class="game-controls">
+            <button type="button" data-2048="left" aria-label="Move left">&#8592;</button>
+            <button type="button" data-2048="up" aria-label="Move up">&#8593;</button>
+            <button type="button" data-2048="down" aria-label="Move down">&#8595;</button>
+            <button type="button" data-2048="right" aria-label="Move right">&#8594;</button>
+          </div>
+          <p class="game-score">Score: <span id="g2048-score">0</span> &middot; <button type="button" id="g2048-reset" class="game-inline-btn">New game</button></p>
+          <p class="game-score" id="g2048-status" aria-live="polite"></p>
+        </article>
+
+        <article class="game-card">
+          <h3>Constellation connect</h3>
+          <p class="game-hint">Tap the stars in order, 1 to 10, to draw a shape.</p>
+          <div class="stars-field" id="game-stars"></div>
+          <p class="game-score" id="stars-status" aria-live="polite"></p>
+        </article>
+
+        <article class="game-card">
+          <h3>Word scramble</h3>
+          <p class="game-hint">Unscramble the letters and type the word.</p>
+          <p class="scramble-word" id="scramble-word" aria-label="Scrambled word"></p>
+          <form class="scramble-form" id="scramble-form">
+            <label class="sr-only" for="scramble-input">Your answer</label>
+            <input type="text" id="scramble-input" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Type the word">
+            <button type="submit" class="game-inline-btn">Check</button>
+          </form>
+          <p class="game-score" id="scramble-status" aria-live="polite"></p>
+        </article>
+
+        <article class="game-card">
+          <h3>Puzzle slider</h3>
+          <p class="game-hint">Slide the tiles until they read 1 to 8 in order.</p>
+          <div class="puzzle-board" id="game-puzzle"></div>
+          <p class="game-score"><button type="button" id="puzzle-reset" class="game-inline-btn">Shuffle</button> <span id="puzzle-status" aria-live="polite"></span></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="badges">
+      <p class="eyebrow">COLLECT THEM ALL</p>
+      <h2>Little <span>badges.</span></h2>
+      <p class="section-copy">Play the games above to unlock each one. They are saved on this device.</p>
+      <div class="badge-shelf" id="badge-shelf"></div>
+    </section>
+
+    <section class="section" id="bests">
+      <p class="eyebrow">YOUR BEST</p>
+      <h2>High <span>scores.</span></h2>
+      <p class="section-copy">Your personal best for each game, kept on this device.</p>
+      <ul class="best-list" id="best-list"></ul>
+      <p class="center-link"><button class="button button-ghost" id="reset-bests" type="button">Reset my best scores</button></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Made with care <span>♥</span> for Mena</p>
+    <p class="footer-small">A little universe of its own ✦</p>
+  </footer>
+</body>
+</html>
